@@ -1,0 +1,65 @@
+<!-- ResearchTabs の設定ページ。vault 名・置き場所・見出し・ノートを開くか(FR-13)と、Obsidian URI の診断(FR-15)。 -->
+<!-- 中身は options.js が value・checked・textContent で入れる(INV-5)。 -->
+<!doctype html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8" />
+		<title>ResearchTabs の設定</title>
+		<style>
+			:root {
+				color-scheme: light dark;
+			}
+			body {
+				max-width: 640px;
+				margin: 16px;
+				font: 14px/1.5 system-ui, sans-serif;
+			}
+			label {
+				display: block;
+				margin-top: 8px;
+			}
+			input[type="text"] {
+				width: 320px;
+			}
+			small {
+				display: block;
+				opacity: 0.7;
+			}
+			.error {
+				color: rgb(196 43 28);
+			}
+		</style>
+		<script type="module" src="options.js"></script>
+	</head>
+	<body>
+		<h1>ResearchTabs の設定</h1>
+		<form id="settings">
+			<label>vault 名 <input id="vault-name" type="text" /></label>
+			<small>Obsidian の vault の切り替え画面に出る名前。空なら「Obsidian に新しいノート」は押せない</small>
+			<label>置き場所 <input id="base-folder" type="text" /></label>
+			<small>vault の中の相対パス。区切りは /(例: レポート/調査レポート)。前後の / は保存のときに取る</small>
+			<label>見出し <input id="heading" type="text" /></label>
+			<small>空なら見出し無し(既存のレポートの節に貼るとき)</small>
+			<label><input id="open-after-create" type="checkbox" /> ノートを作った後に開く(切ると URI に silent を付ける)</label>
+			<p><button type="submit">保存</button></p>
+			<p id="save-result" role="status"></p>
+		</form>
+
+		<h2>診断(Obsidian URI の実測)</h2>
+		<p>試験用の vault で使う。合成の N 行で URI を組み、文字数を出してから開く。ノートは vault の直下に「ResearchTabs診断_方式_N_時刻」の名前でできる。</p>
+		<form id="diag">
+			<label>行数 N <input id="diag-n" type="number" min="1" step="1" value="10" /></label>
+			<label>vault 名 <input id="diag-vault" type="text" placeholder="試験用の vault の名前" /></label>
+			<label
+				>方式
+				<select id="diag-mode">
+					<option value="content">content</option>
+					<option value="clipboard">clipboard</option>
+				</select>
+			</label>
+			<p><button type="submit">診断</button></p>
+			<p id="diag-length"></p>
+			<p id="diag-result" role="status"></p>
+		</form>
+	</body>
+</html>

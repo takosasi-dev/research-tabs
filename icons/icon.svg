@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+<!-- ResearchTabs のツールバーのアイコンの元。桐の縁の標本箱に、ピンで留めたデータラベル(タブ)が 3 枚。下の 1 枚は除いた物で破線。node tools/svg_to_png.mjs で icons/16・32・48・128.png にする -->
+<rect x="5" y="8" width="118" height="112" rx="14" fill="#8a6a48"/>
+<rect x="15" y="18" width="98" height="92" rx="6" fill="#edf0eb"/>
+<rect x="42" y="27" width="60" height="18" rx="2" fill="#1e5b47"/>
+<rect x="42" y="55" width="60" height="18" rx="2" fill="#1e5b47"/>
+<rect x="44" y="85" width="44" height="14" rx="2" fill="none" stroke="#8a6a48" stroke-width="4" stroke-dasharray="7 5"/>
+<circle cx="29" cy="36" r="7" fill="#1f2620"/>
+<circle cx="29" cy="64" r="7" fill="#1f2620"/>
+<circle cx="29" cy="92" r="6" fill="none" stroke="#8a6a48" stroke-width="3"/>
+</svg>
